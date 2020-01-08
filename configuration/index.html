@@ -271,8 +271,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#with-kubernetes-services" class="md-nav__link">
+    With Kubernetes Services
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#traffic-type" class="md-nav__link">
     Traffic type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheme" class="md-nav__link">
+    Scheme
   </a>
   
 </li>
@@ -291,6 +306,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rate-limit" class="md-nav__link">
+    Rate Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-service-mesh-interface" class="md-nav__link">
+    With Service Mesh Interface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    Access Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-splitting" class="md-nav__link">
+    Traffic Splitting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-metrics" class="md-nav__link">
+    Traffic Metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -304,6 +365,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   
 </nav>
     
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../examples/" title="Examples" class="md-nav__link">
+      Examples
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../api/" title="API" class="md-nav__link">
+      API
+    </a>
   </li>
 
     
@@ -343,8 +428,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#with-kubernetes-services" class="md-nav__link">
+    With Kubernetes Services
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#traffic-type" class="md-nav__link">
     Traffic type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheme" class="md-nav__link">
+    Scheme
   </a>
   
 </li>
@@ -360,6 +460,52 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <a href="#circuit-breaker" class="md-nav__link">
     Circuit breaker
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limit" class="md-nav__link">
+    Rate Limit
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-service-mesh-interface" class="md-nav__link">
+    With Service Mesh Interface
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-control" class="md-nav__link">
+    Access Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-splitting" class="md-nav__link">
+    Traffic Splitting
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#traffic-metrics" class="md-nav__link">
+    Traffic Metrics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -386,8 +532,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                 
                 
                 <h1 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h1>
-<p>The configuration for maesh is broken into two parts: the static configuration, and the dynamic configuration. 
-The static configuration is configured when the maesh service mesh is installed, 
+<p>The configuration for maesh is broken down into two parts: the static configuration, and the dynamic configuration.
+The static configuration is configured when the maesh service mesh is installed,
 and is configured via the values.yaml file in the helm install.</p>
 <h2 id="static-configuration">Static configuration<a class="headerlink" href="#static-configuration" title="Permanent link">&para;</a></h2>
 <ul>
@@ -412,27 +558,113 @@ and is configured via the values.yaml file in the helm install.</p>
 </li>
 </ul>
 <h2 id="dynamic-configuration">Dynamic configuration<a class="headerlink" href="#dynamic-configuration" title="Permanent link">&para;</a></h2>
-<h3 id="traffic-type">Traffic type<a class="headerlink" href="#traffic-type" title="Permanent link">&para;</a></h3>
+<p>Dynamic configuration can be provided to Maesh using either annotations on kubernetes services (default mode) or SMI resources if Maesh is installed with <a href="../install/#service-mesh-interface">SMI enabled</a>.</p>
+<h3 id="with-kubernetes-services">With Kubernetes Services<a class="headerlink" href="#with-kubernetes-services" title="Permanent link">&para;</a></h3>
+<h4 id="traffic-type">Traffic type<a class="headerlink" href="#traffic-type" title="Permanent link">&para;</a></h4>
 <p>Annotations on services are the main way to configure maesh behavior.</p>
 <p>The service mode can be enabled by using the following annotation:</p>
 <pre class="highlight"><code class="language-yaml">maesh.containo.us/traffic-type: "http"</code></pre>
 
 <p>This annotation can be set to either <code>http</code> or <code>tcp</code>, and will specify the mode for that service operation.
 If this annotation is not present, the mesh service will operate in the default mode specified in the static configuration.</p>
-<h3 id="retry">Retry<a class="headerlink" href="#retry" title="Permanent link">&para;</a></h3>
+<h4 id="scheme">Scheme<a class="headerlink" href="#scheme" title="Permanent link">&para;</a></h4>
+<p>The scheme used to define custom scheme for request:</p>
+<pre class="highlight"><code class="language-yaml">maesh.containo.us/scheme: "h2c"</code></pre>
+
+<p>This annotation can be set to either <code>http</code>, <code>https</code> or <code>h2c</code> and is available for <code>maesh.containo.us/traffic-type: "http"</code>.</p>
+<details class="note"><summary>Limitations</summary><p>Please keep in mind, that if you set the scheme to <code>https</code> your service needs to expose itself via HTTPS as there is no
+mTLS in Maesh.</p>
+</details>
+<h4 id="retry">Retry<a class="headerlink" href="#retry" title="Permanent link">&para;</a></h4>
 <p>Retries can be enabled by using the following annotation:</p>
 <pre class="highlight"><code class="language-yaml">maesh.containo.us/retry-attempts: "2"</code></pre>
 
 <p>This annotation sets the number of retry attempts that maesh will make if a network error occurrs.
 Please note that this value is a string, and needs to be quoted.</p>
-<h3 id="circuit-breaker">Circuit breaker<a class="headerlink" href="#circuit-breaker" title="Permanent link">&para;</a></h3>
+<h4 id="circuit-breaker">Circuit breaker<a class="headerlink" href="#circuit-breaker" title="Permanent link">&para;</a></h4>
 <p>Circuit breaker can be enabled by using the following annotation:</p>
 <pre class="highlight"><code class="language-yaml">maesh.containo.us/circuit-breaker-expression: "Expression"</code></pre>
 
-<p>This annotation sets the expression for circuit breaking. 
+<p>This annotation sets the expression for circuit breaking.
 The circuit breaker protects your system from stacking requests to unhealthy services (resulting in cascading failures).
 When your system is healthy, the circuit is closed (normal operations). When your system becomes unhealthy, the circuit opens, and requests are no longer forwarded (but handled by a fallback mechanism).</p>
 <p>All configuration options are available <a href="https://docs.traefik.io/v2.0/middlewares/circuitbreaker/#configuration-options">here</a></p>
+<h4 id="rate-limit">Rate Limit<a class="headerlink" href="#rate-limit" title="Permanent link">&para;</a></h4>
+<p>Rate limiting can be enabled by using the following annotations:</p>
+<pre class="highlight"><code class="language-yaml">maesh.containo.us/ratelimit-average: "100"
+maesh.containo.us/ratelimit-burst: "200"</code></pre>
+
+<p>These annotation sets average and burst requests per second limit for the service.
+Please note that this value is a string, and needs to be quoted.</p>
+<p>Further details about the rate limiting can be found <a href="https://docs.traefik.io/v2.0/middlewares/ratelimit/#configuration-options">here</a></p>
+<h3 id="with-service-mesh-interface">With Service Mesh Interface<a class="headerlink" href="#with-service-mesh-interface" title="Permanent link">&para;</a></h3>
+<h4 id="access-control">Access Control<a class="headerlink" href="#access-control" title="Permanent link">&para;</a></h4>
+<p>The first step is to describe what the traffic of our server application looks like.</p>
+<pre class="highlight"><code class="language-yaml">---
+apiVersion: specs.smi-spec.io/v1alpha1
+kind: HTTPRouteGroup
+metadata:
+  name: server-routes
+  namespace: server
+matches:
+  - name: api
+    pathRegex: /api
+    methods: ["*"]
+  - name: metrics
+    pathRegex: /metrics
+    methods: ["GET"]</code></pre>
+
+<p>In this example, we define a set of HTTP routes for our <code>server</code> application.</p>
+<p>More precisely, the <code>server</code> app is composed by two routes:</p>
+<ul>
+<li>The <code>api</code> route under the <code>/api</code> path, accepting all methods</li>
+<li>The <code>metrics</code> routes under the <code>/metrics</code> path, accepting only <code>GET</code> requests</li>
+</ul>
+<p>Other types of route groups and detailed information are available <a href="https://github.com/deislabs/smi-spec/blob/master/traffic-specs.md">in the specification</a>.</p>
+<p>By default, all traffic is denied so we need to grant access to clients to our application. This is done by defining a <code>TrafficTarget</code>.</p>
+<pre class="highlight"><code class="language-yaml">---
+apiVersion: access.smi-spec.io/v1alpha1
+kind: TrafficTarget
+metadata:
+  name: client-server-target
+  namespace: server
+destination:
+  kind: ServiceAccount
+  name: server
+  namespace: server
+specs:
+  - kind: HTTPRouteGroup
+    name: server-routes
+    matches:
+      - api
+sources:
+  - kind: ServiceAccount
+    name: client
+    namespace: client</code></pre>
+
+<p>In this example, we grant access to all pods running with the service account <code>client</code> under the namespace <code>client</code> to the HTTP route <code>api</code> specified by on the group <code>server-routes</code> on all pods running with the service account <code>server</code> under the namespace <code>server</code>.</p>
+<p>Any client running with the service account <code>client</code> under the <code>client</code> namespace accessing <code>server.server.maesh/api</code> is allowed to access the <code>/api</code> resource. Others will receive 404 answers from the Maesh node.</p>
+<p>More information can be found <a href="https://github.com/deislabs/smi-spec/blob/master/traffic-access-control.md">in the SMI specification</a>.</p>
+<h4 id="traffic-splitting">Traffic Splitting<a class="headerlink" href="#traffic-splitting" title="Permanent link">&para;</a></h4>
+<p>SMI defines the <code>TrafficSplit</code> resource which allows to direct subsets of the traffic to different services.</p>
+<pre class="highlight"><code class="language-yaml">apiVersion: split.smi-spec.io/v1alpha1
+kind: TrafficSplit
+metadata:
+  name: server-split
+  namespace server
+spec:
+  service: server
+  backends:
+  - service: server-v1
+    weight: 80
+  - service: server-v2
+    weight: 20</code></pre>
+
+<p>In this example, we define a traffic split for our server service between two versions of our server, v1 and v2.
+<code>server.server.maesh</code> directs 80% of the traffic to the server-v1 pods, and 20% of the traffic to the server-v2 pods.</p>
+<p>More information can be found <a href="https://github.com/deislabs/smi-spec/blob/master/traffic-split.md">in the SMI specification</a>.</p>
+<h4 id="traffic-metrics">Traffic Metrics<a class="headerlink" href="#traffic-metrics" title="Permanent link">&para;</a></h4>
+<p>At the moment, Maesh does not implement the <a href="https://github.com/deislabs/smi-spec/blob/master/traffic-metrics.md">Traffic Metrics specification</a>.</p>
                 
                   
                 
