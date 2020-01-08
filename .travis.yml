@@ -44,6 +44,9 @@ before_deploy:
   - curl -sfL https://raw.githubusercontent.com/ldez/seihon/master/godownloader.sh | bash -s -- -b "${GOPATH}/bin" ${SEIHON_VERSION}
   - seihon --version
   - docker run --rm --privileged hypriot/qemu-register
+  # Install Structor for versioned docs
+  - curl -sfL https://raw.githubusercontent.com/containous/structor/master/godownloader.sh | bash -s -- -b "${GOPATH}/bin" ${STRUCTOR_VERSION}
+  - structor -o containous -r maesh --dockerfile-url="https://raw.githubusercontent.com/containous/maesh/docs/docs.Dockerfile" --menu.js-url="https://raw.githubusercontent.com/containous/structor/master/traefik-menu.js.gotmpl" --rqts-url="https://raw.githubusercontent.com/containous/structor/master/requirements-override.txt" --force-edit-url --exp-branch=master --debug;
 deploy:
   - provider: script
     skip_cleanup: true
