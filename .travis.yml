@@ -39,7 +39,6 @@ before_deploy:
   - >
     if ! [ "$BEFORE_DEPLOY_RUN" ]; then
       export BEFORE_DEPLOY_RUN=1
-      echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin
       curl -sfL https://raw.githubusercontent.com/containous/structor/master/godownloader.sh | bash -s -- -b "${GOPATH}/bin" ${STRUCTOR_VERSION}
       structor -o SantoDE -r maesh --dockerfile-url="https://raw.githubusercontent.com/containous/maesh/docs/docs.Dockerfile" --menu.js-url="https://raw.githubusercontent.com/containous/structor/master/traefik-menu.js.gotmpl" --rqts-url="https://raw.githubusercontent.com/containous/structor/master/requirements-override.txt" --force-edit-url --exp-branch=master --debug;
     fi
@@ -71,5 +70,5 @@ deploy:
     skip_cleanup: true
     keep_history: true
     on:
-      repo: containous/maesh
+      repo: SantoDE/maesh
       all_branches: true
