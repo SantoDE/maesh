@@ -35,6 +35,7 @@ install:
   - git diff --exit-code go.sum
   - go mod download
 
+
 before_deploy:
   - >
     if ! [ "$BEFORE_DEPLOY_RUN" ]; then
