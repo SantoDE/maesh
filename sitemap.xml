@@ -2,32 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://docs.mae.sh/</loc>
-     <lastmod>2020-01-08</lastmod>
+     <lastmod>2020-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.mae.sh/quickstart/</loc>
-     <lastmod>2020-01-08</lastmod>
+     <lastmod>2020-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.mae.sh/install/</loc>
-     <lastmod>2020-01-08</lastmod>
+     <lastmod>2020-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.mae.sh/configuration/</loc>
-     <lastmod>2020-01-08</lastmod>
+     <lastmod>2020-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.mae.sh/examples/</loc>
-     <lastmod>2020-01-08</lastmod>
+     <lastmod>2020-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://docs.mae.sh/api/</loc>
-     <lastmod>2020-01-08</lastmod>
+     <lastmod>2020-01-13</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
